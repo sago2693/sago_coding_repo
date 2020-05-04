@@ -38,6 +38,16 @@ def wait_for_clickable_element(driver,element_id_string,error_message,timeout=20
         print(error_message)
         driver.quit()
 
+def wait_for_text_in_element(driver,element_id_string,desired_string,error_message,timeout=20):
+
+    try:
+        return WebDriverWait(driver, timeout).until(EC.text_to_be_present_in_element((By.CLASS_NAME, element_id_string),desired_string))
+
+    except TimeoutException:
+        print(error_message)
+        driver.quit()
+
+
 def send_keys_and_enter(clickable_object,key_string):
     clickable_object.send_keys(key_string)
     clickable_object.send_keys(Keys.ENTER)
