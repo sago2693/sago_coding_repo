@@ -1,0 +1,4 @@
+conda create -n myenv python=3.6
+
+Ipikernel install for VS Code Jupyter
+conda install -c anaconda ipykernel
